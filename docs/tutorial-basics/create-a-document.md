@@ -2,17 +2,17 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# 创建文档
 
-Documents are **groups of pages** connected through:
+文档是**一组页面**，通过以下方式连接在一起：
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+- **侧边栏**
+- **上一页/下一页导航**
+- **版本管理**
 
-## Create your first Doc
+## 创建你的第一篇文档
 
-Create a Markdown file at `docs/hello.md`:
+在 `docs/hello.md` 创建一个 Markdown 文件：
 
 ```md title="docs/hello.md"
 # Hello
@@ -20,13 +20,13 @@ Create a Markdown file at `docs/hello.md`:
 This is my **first Docusaurus document**!
 ```
 
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
+新文档现在可以在 [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello) 访问。
 
-## Configure the Sidebar
+## 配置侧边栏
 
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
+Docusaurus 会根据 `docs` 目录自动**创建侧边栏**。
 
-Add metadata to customize the sidebar label and position:
+添加元数据来自定义侧边栏的标签与位置：
 
 ```md title="docs/hello.md" {1-4}
 ---
@@ -39,7 +39,7 @@ sidebar_position: 3
 This is my **first Docusaurus document**!
 ```
 
-It is also possible to create your sidebar explicitly in `sidebars.js`:
+你也可以在 `sidebars.js` 中显式创建侧边栏：
 
 ```js title="sidebars.js"
 export default {
