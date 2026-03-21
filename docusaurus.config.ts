@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'LongwayBai',
+  tagline: '技术笔记与工具分享',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -71,9 +71,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'LongwayBai',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'LongwayBai Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -81,9 +81,14 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: '文档',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: '博客', position: 'left'},
+        {
+          href: 'https://github.com/LongwayBai/lazyvim-config',
+          label: 'LazyVim',
+          position: 'right',
+        },
         {
           href: 'https://github.com/LongwayBai/LongwayBai.github.io',
           label: 'GitHub',
@@ -95,46 +100,42 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'LazyVim 配置',
+              to: '/docs/lazyvim',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '项目',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'LazyVim Config',
+              href: 'https://github.com/LongwayBai/lazyvim-config',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'This Site',
+              href: 'https://github.com/LongwayBai/LongwayBai.github.io',
             },
           ],
         },
         {
-          title: 'More',
+          title: '更多',
           items: [
             {
-              label: 'Blog',
+              label: '博客',
               to: '/blog',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/LongwayBai',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} LongwayBai. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
