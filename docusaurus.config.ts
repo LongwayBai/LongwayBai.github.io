@@ -106,6 +106,10 @@ const config: Config = {
               label: 'LazyVim 配置',
               to: '/docs/lazyvim',
             },
+            {
+              label: 'Tmux 配置',
+              to: '/docs/tmux',
+            },
           ],
         },
         {
