@@ -6,7 +6,7 @@ sidebar_position: 1
 
 基于 [LazyVim](https://github.com/LazyVim/LazyVim) 构建的个人 Neovim 配置，集成了丰富的插件和个性化配置。
 
-![intro](https://private-user-images.githubusercontent.com/254935088/549778077-25592202-64b7-4ce1-a781-0a36d0bf9b76.gif)
+![intro](/img/lazyvim.png)
 
 ## 特性
 
