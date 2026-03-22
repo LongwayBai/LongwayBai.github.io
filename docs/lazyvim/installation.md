@@ -11,7 +11,7 @@ sidebar_position: 2
 | 工具 | 说明 | 安装命令 (macOS) | 安装命令 (Linux) |
 |------|------|------------------|------------------|
 | **Neovim** >= 0.11.2 | 编辑器本体 | `brew install neovim` | `sudo apt install neovim` |
-| **Git** | 版本控制 | 已安装 | 已安装 |
+| **Git** | 版本控制 | `brew install git` | `sudo apt install git` |
 | **Node.js** | LSP 和插件支持 | `brew install node` | `curl -fsSL https://deb.nodesource.com/setup_lts.x \| sudo -E bash -` |
 | **Ripgrep** | 代码搜索 | `brew install ripgrep` | `sudo apt install ripgrep` |
 | **fd** | 文件查找 | `brew install fd` | `sudo apt install fd-find` |
@@ -51,24 +51,23 @@ nvim
 
 ## 语言支持安装
 
-根据你的开发需求安装相应的 LSP 服务器：
+LazyVim 默认通过 Mason 管理和安装 LSP。首次启动后，可以在 Neovim 中执行以下命令打开 Mason 界面，并按需安装语言服务器：
 
-```bash
-# Python
-pip install python-lsp-server
-
-# TypeScript/JavaScript
-npm install -g typescript typescript-language-server
-
-# C/C++ (macOS)
-brew install llvm
-
-# JSON
-npm install -g vscode-langservers-extracted
-
-# Markdown
-npm install -g marksman
+```vim
+:Mason
 ```
+![Mason](/img/mason.png)
+
+常见场景：
+
+- Python：安装 `pyright` 或 `basedpyright`
+- TypeScript/JavaScript：安装 `tsserver` 或 `vtsls`
+- C/C++：安装 `clangd`
+- JSON：安装 `json-lsp`
+- Markdown：安装 `marksman`
+- Lua: 安装 `lua-language-server`
+
+注意：部分 LSP 仍然依赖系统环境中的运行时或工具链，例如 Node.js、Python、clangd 等，请先确保这些基础依赖已安装。
 
 ## 更新
 
@@ -94,6 +93,7 @@ git pull
 
 ```vim
 :LspInfo
+:LspLog
 :Mason
 ```
 
