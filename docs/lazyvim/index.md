@@ -1,75 +1,52 @@
 ---
 sidebar_position: 1
+title: LazyVim 入门与配置说明
+description: 基于 LongwayBai/lazyvim-config 整理的 LazyVim 文档，重点讲清楚这套配置适合谁、先看什么，以及为什么这样配置。
 ---
 
-# LazyVim 个人配置
+这组文档基于 [LongwayBai/lazyvim-config](https://github.com/LongwayBai/lazyvim-config) 整理。这不是一份机械的“插件列表”，而是想把这套配置说清楚：它适合谁、怎么跑起来、哪些地方和默认 LazyVim 不同。
 
-基于 [LazyVim](https://github.com/LazyVim/LazyVim) 构建的个人 Neovim 配置，集成了丰富的插件和个性化配置。
+![LazyVim 仪表盘界面](/img/lazyvim/lazyvim.png)
 
-![dashboard](/img/lazyvim.png)
+*图：启动后的仪表盘。对我来说，它的意义不在于好看，而在于刚打开编辑器时就能立刻看到最近处理的文件和常用入口，不用停下来想接下来该干什么。*
 
-## 为什么把 nvim 作为主力编辑工具
+如果你想直接动手，可以先看 [安装与环境准备](/docs/lazyvim/installation)。如果你已经装好了，只是记不住按键，那就去翻 [快捷键速查](/docs/lazyvim/keymaps)。
 
-- ⌨️ 键盘驱动的编辑体验，减少鼠标依赖，长时间写代码更高效
-- ⚡ 启动快、占用轻，适合随时打开、快速修改和沉浸式开发
-- 🧩 插件生态成熟，可按需扩展，兼顾极简与强大能力
-- 🖥️ 终端原生集成好，配合 Git、Shell、Yazi 等工具形成统一工作流
-- 🌍 在本地开发、远程 SSH、容器环境里都能保持一致体验
+## 为什么折腾这套配置
 
-## 特性
+我自己最后留在 LazyVim，不是因为它插件多，而是因为它在两个方向上平衡得很好：
 
-- 🚀 基于 LazyVim，快速启动和流畅体验
-- 🎨 精选主题配置（Tokyo Night / Catppuccin）
-- 🔧 完善的 LSP 支持，配合 Lspsaga 增强交互
-- 📝 优化的代码补全（Blink.cmp）
-- 🌳 集成 Yazi 文件管理器
-- 📊 美化的 Markdown 渲染和预览
-- 🎯 自定义键位映射和工作流优化
+1. 这种纯键盘驱动的效率。
+2. LSP、搜索、文件管理这些基础设施，它提前帮我接好了。
 
-## 主要插件
+换句话说，这套配置不是为了“把编辑器塞满”，而是为了让你少花点时间在配置的基础设施上，多花点时间写代码。
 
-### 主题和界面
-- **tokyonight.nvim** - Tokyo Night 主题（透明背景）
-- **catppuccin/nvim** - Catppuccin Frappe 主题（默认）
-- **lualine.nvim** - 优化的状态栏显示
-- **mini.icons** - 图标支持
-- **snacks.nvim** - 增强的仪表盘和 UI 组件
+## 谁会喜欢这套配置
 
-### 编辑器增强
-- **nvim-treesitter** - 语法高亮和代码理解
-- **yazi.nvim** - 终端文件管理器集成
-- **better-escape.nvim** - 优化的 Esc 映射（jk/jj）
+它比较适合这类开发者：
 
-### LSP 和补全
-- **lspsaga.nvim** - LSP UI 增强
-- **blink.cmp** - 代码补全引擎
+- 不想从零开始写 Lua，但又觉得默认配置差点意思。
+- 习惯键盘工作，希望编辑、搜索、跳转能连成一套动作。
+- 需要在本地、远程服务器或容器里有一致的体验。
+- 经常写代码，也顺手改 Markdown 或看日志，不想为此切工具。
 
-### Markdown 支持
-- **render-markdown.nvim** - 实时 Markdown 渲染
-- **markdown-preview.nvim** - 浏览器预览
+## 建议先理解这 4 点
 
-## 目录结构
+刚开始用这套配置时，没必要记住所有功能，先接受这四个设定就够了：
 
-```
-~/.config/nvim/
-├── init.lua                 # 入口文件
-├── lazyvim.json            # LazyVim 配置
-├── lua/
-│   ├── config/
-│   │   ├── autocmds.lua    # 自动命令
-│   │   ├── keymaps.lua     # 键位映射
-│   │   ├── lazy.lua        # Lazy.nvim 配置
-│   │   └── options.lua     # 编辑器选项
-│   └── plugins/
-│       ├── ai.lua          # AI 插件配置
-│       ├── code.lua        # 代码编辑插件
-│       ├── editor.lua      # 编辑器增强插件
-│       ├── lsp.lua         # LSP 配置
-│       ├── theme.lua       # 主题配置
-│       └── ui.lua          # UI 增强插件
-```
+1. **Leader 键是空格**。绝大多数快捷键都是“先按空格，再接后续”。
+2. **不用太依赖侧边栏**。找文件和切目录更多是用搜索和 Yazi 完成的。
+3. **LSP 已经接好了**。跳转、悬浮文档、代码格式化，装好基本就能用。
+4. **Markdown 是核心能力**。专门调优了渲染和预览，写文档时不需要切出去。
 
-## 相关资源
+## 我重点改了哪些地方
 
-- 源码仓库：[LongwayBai/lazyvim-config](https://github.com/LongwayBai/lazyvim-config)
-- 许可证：[Apache License 2.0](https://github.com/LongwayBai/lazyvim-config/blob/main/LICENSE)
+和“默认版”相比，这几件事是我比较在意的：
+
+- **引入 Yazi 负责文件管理**：查文件、切目录、看预览比单纯的树状图顺手得多。
+- **调优了 LSP 交互**：悬浮文档和代码操作这些高频动作，界面读起来更清晰。
+- **增强了 Markdown 体验**：实时渲染和浏览器预览都在，写文档不用再找专门的编辑器。
+- **配色保持克制**：默认是 Catppuccin Frappé，长时间看代码眼睛不累。
+
+如果你安装卡住了，去看 [安装与环境准备](/docs/lazyvim/installation)；如果装好了但不知道按什么，看 [快捷键速查](/docs/lazyvim/keymaps)。
+

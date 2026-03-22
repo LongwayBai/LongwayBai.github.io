@@ -1,175 +1,90 @@
 ---
 sidebar_position: 4
+title: 插件与扩展
+description: 解释 LongwayBai/lazyvim-config 里几组关键插件为什么存在，以及后续应该从哪里开始改。
 ---
 
-# 插件配置
+这一页不打算把所有插件都列一遍。
 
-## 启用的 LazyVim Extras
+对这套配置来说，更值得讲清楚的是：**哪些插件真的影响日常使用，为什么它们会留下来，以及你以后想改时该先改哪里。**
 
-```lua
-"lazyvim.plugins.extras.ai.copilot"        -- GitHub Copilot AI 补全
-"lazyvim.plugins.extras.ai.sidekick"       -- AI 编程助手
-"lazyvim.plugins.extras.lang.clangd"       -- C/C++ 语言支持
-"lazyvim.plugins.extras.lang.json"         -- JSON 语言支持
-"lazyvim.plugins.extras.lang.markdown"     -- Markdown 语言支持
-"lazyvim.plugins.extras.lang.python"       -- Python 语言支持
-"lazyvim.plugins.extras.lang.typescript"   -- TypeScript 语言支持
-```
+## 先说一个整体思路
 
-## 主题配置
+我自己不太喜欢把 Neovim 配到“什么都能做，但每个功能都只停在能用”。所以这套配置里保留下来的插件，基本都对应比较明确的使用场景：
 
-### Catppuccin (默认)
+- 写代码时，LSP、补全和搜索要尽量顺手。
+- 找文件、切目录时，不强依赖传统侧边栏。
+- 写 Markdown 时，不想因为预览体验太差再切回别的编辑器。
+- 主题和界面保持够用、耐看，不追求花哨。
 
-使用 Catppuccin Frappé 主题，位于 `lua/plugins/theme.lua`：
+所以你会看到，这里的插件选择大多不是为了“多”，而是为了把几条最常走的工作流连起来。
 
-```lua
-{
-  "catppuccin/nvim",
-  opts = {
-    flavour = "frappe",
-    transparent_background = true,
-  },
-}
-```
+## 启用了哪些 LazyVim Extras
 
-### Tokyo Night
+LazyVim 官方本身提供了一套 Extras 机制，用来快速补不同语言或能力。这套配置里已经启用的主要有这些：
 
-备用主题配置：
+- AI：`copilot`、`sidekick`
+- 语言：`clangd`、`json`、`markdown`、`python`、`typescript`
 
-```lua
-{
-  "folke/tokyonight.nvim",
-  opts = {
-    transparent = true,
-  },
-}
-```
+如果你以后要补别的语言，比如 Go、Rust，通常也是从 `lua/config/lazy.lua` 里的 `extras` 列表开始看。
 
-## 补全配置
+## 这几组插件最影响日常体验
 
-使用 Blink.cmp 作为补全引擎：
+### 1. Yazi：终端文件管理器的效率
 
-```lua
-{
-  "sagcn/blink.cmp",
-  opts = {
-    completion = {
-      menu = {
-        border = "rounded",
-      },
-      accept = {
-        auto_brackets = {
-          enabled = true,
-        },
-      },
-    },
-    keymap = {
-      preset = "enter",
-      ["<Tab>"] = { "select_next", "fallback" },
-      ["<S-Tab>"] = { "select_prev", "fallback" },
-    },
-  },
-}
-```
+很多人在 IDE 里习惯了侧边栏目录树，但在 Neovim 里，我更推荐这种“目录树 vs 终端管理器”的混合工作流：简单找文件用 `<leader><space>` 搜索，需要跨目录批量操作、预览图片或查看深层结构时，直接呼出 Yazi。
 
-## LSP 配置
+![Yazi 界面](/img/lazyvim/yazi.png)
 
-使用 Lspsaga 增强 LSP UI：
+*图：在 Neovim 中呼出 Yazi。这种方式比侧边栏更强大的地方在于，它继承了终端文件管理器的所有快捷键，且预览内容（如图片、大文件）时性能更好，不会拖慢编辑器。*
 
-```lua
-{
-  "nvimdev/lspsaga.nvim",
-  init = function()
-    require("lspsaga").setup({
-      ui = {
-        border = "rounded",
-      },
-      symbol_in_winbar = {
-        in_custom = true,
-      },
-    })
-  end,
-}
-```
+对应的快捷键：
 
-## 文件管理器
+- `<leader>fy`：在当前文件目录打开 Yazi
+- `<leader>fw`：在项目工作目录打开 Yazi
+- `<C-up>`：恢复上次关闭的 Yazi 会话（非常有用的“后悔药”）
 
-集成 Yazi：
 
-```lua
-{
-  "mikavilpas/yazi.nvim",
-  event = { "VeryLazy" },
-  keys = {
-    {
-      "<leader>fy",
-      function()
-        require("yazi").yazi()
-      end,
-      desc = "Open Yazi",
-    },
-    {
-      "<leader>fw",
-      function()
-        require("yazi").yazi(nil, 1)
-      end,
-      desc = "Open Yazi in cwd",
-    },
-  },
-}
-```
+### 2. Blink.cmp：把补全这件事处理干净
 
-## Markdown 支持
+补全引擎这里，用的是 `Blink.cmp`。对我来说，它最实际的价值不是“参数很多”，而是补全这件事能比较安静地待在该待的位置上：该弹就弹，该选就选，不太需要再花很多时间去跟它较劲。
 
-### 实时渲染
+### 3. Lspsaga：把 LSP 常用入口变得更好读
 
-```lua
-{
-  "MeanderingProgrammer/render-markdown.nvim",
-  ft = { "markdown" },
-  opts = {
-    render_modes = { "activity", "VirtualText" },
-  },
-}
-```
+LSP 本身当然还是 Neovim 那一套，但这份配置额外用了 `Lspsaga` 去接住一部分交互界面。这样做的目的不是炫技，而是让“看定义、看文档、看诊断”这些高频动作更容易读。
 
-### 浏览器预览
+如果你平时主要靠 `gd`、`K`、`<leader>ca` 这些键工作，这部分改动会比较明显。
 
-```lua
-{
-  "iamcco/markdown-preview.nvim",
-  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  build = "cd app && yarn install",
-  init = function()
-    vim.g.mkdp_filetypes = { "markdown" }
-  end,
-  ft = { "markdown" },
-}
-```
+### 4. Markdown 相关：把写文档这件事认真对待
 
-## 编辑器增强
+这套配置不是只拿来写代码，所以 Markdown 相关也单独做了处理：
 
-### 快速转义
+- `render-markdown.nvim`：适合在编辑器里直接看结构和渲染效果
+- `markdown-preview.nvim`：适合需要浏览器预览时使用
 
-```lua
-{
-  "max397574/better-escape.nvim",
-  event = { "InsertEnter" },
-  opts = {
-    mapping = { "jk", "jj" },
-    timeout = vim.opt.timeoutlen,
-  },
-}
-```
+如果你平时会写 README、博客或者笔记，这部分其实很值。
 
-### 文本标记
+### 5. 主题和界面：保持顺眼，但不过分抢戏
 
-```lua
-{
-  "LongwayBai/Mark--KarKat",
-  event = { "VeryLazy" },
-  config = function()
-    require("config.mark").setup()
-  end,
-}
-```
+主题上默认是 `Catppuccin Frappé`，同时也留了 `Tokyo Night` 作为备选。界面层面还会用到 `lualine.nvim`、`mini.icons`、`snacks.nvim` 这些插件。
+
+我更在意的是它们把界面整理得更清楚，而不是把编辑器弄得特别花。毕竟真正长期要看的，还是代码本身。
+
+## 如果你想自己改，从哪里开始
+
+这套配置里，插件相关的改动主要都放在 `lua/plugins/` 目录下。按当前文档里提到的划分，大致可以这样找：
+
+- `ai.lua`: Copilot 等 AI 相关的设置。
+- `code.lua`: 代码编辑相关插件。
+- `editor.lua`: Yazi、转义键等编辑器增强。
+- `lsp.lua`: LSP 相关配置。
+- `theme.lua`: 主题相关配置。
+- `ui.lua`: UI 增强插件。
+
+如果你准备开始自己动这套配置，我更建议的顺序是：
+
+1. 先改主题和界面这种风险低的部分。
+2. 再改 Yazi、快捷键、Markdown 这些使用习惯相关的部分。
+3. 最后再去动 LSP、补全、AI 相关配置。
+
+这样做的好处是，哪怕中间改崩了一点，也更容易判断到底是哪一层出了问题。
