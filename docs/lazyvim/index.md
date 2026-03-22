@@ -6,7 +6,15 @@ sidebar_position: 1
 
 基于 [LazyVim](https://github.com/LazyVim/LazyVim) 构建的个人 Neovim 配置，集成了丰富的插件和个性化配置。
 
-![intro](/img/lazyvim.png)
+![dashboard](/img/lazyvim.png)
+
+## 为什么把 nvim 作为主力编辑工具
+
+- ⌨️ 键盘驱动的编辑体验，减少鼠标依赖，长时间写代码更高效
+- ⚡ 启动快、占用轻，适合随时打开、快速修改和沉浸式开发
+- 🧩 插件生态成熟，可按需扩展，兼顾极简与强大能力
+- 🖥️ 终端原生集成好，配合 Git、Shell、Yazi 等工具形成统一工作流
+- 🌍 在本地开发、远程 SSH、容器环境里都能保持一致体验
 
 ## 特性
 

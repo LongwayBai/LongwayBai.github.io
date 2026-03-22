@@ -166,7 +166,7 @@ sidebar_position: 4
 
 ```lua
 {
-  "vitrin1212/Mark--KarKat",
+  "LongwayBai/Mark--KarKat",
   event = { "VeryLazy" },
   config = function()
     require("config.mark").setup()
