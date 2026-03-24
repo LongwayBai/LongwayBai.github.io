@@ -1,30 +1,176 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #0070f3;
+  --ifm-color-primary-dark: #0064da;
+  --ifm-color-primary-darker: #005ecf;
+  --ifm-color-primary-darkest: #004dae;
+  --ifm-color-primary-light: #1a80f4;
+  --ifm-color-primary-lighter: #2687f5;
+  --ifm-color-primary-lightest: #4d9ff7;
+  
+  --ifm-font-family-base: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ifm-font-family-monospace: 'SFMono-Regular', 'JetBrains Mono', Consolas, Monaco, monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-heading-color: #0f172a;
+  --ifm-background-color: #f6f8fc;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-color-emphasis-100: #f1f5f9;
+  --ifm-color-emphasis-200: #dbe4ef;
+  --ifm-color-emphasis-300: #c5d0de;
+  --ifm-color-emphasis-600: #526172;
+  --ifm-color-emphasis-700: #334155;
+  --ifm-color-emphasis-800: #1f2937;
+  --ifm-color-emphasis-900: #0f172a;
+
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  --ifm-footer-background-color: #0b1220;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #32d8b4;
+  --ifm-color-primary-dark: #2ab698;
+  --ifm-color-primary-darker: #28ac8f;
+  --ifm-color-primary-darkest: #218d76;
+  --ifm-color-primary-light: #46dbba;
+  --ifm-color-primary-lighter: #51debd;
+  --ifm-color-primary-lightest: #70e4c8;
+  
+  --ifm-background-color: #0d1117;
+  --ifm-background-surface-color: #161b22;
+  --ifm-heading-color: #f8fafc;
+  --ifm-color-emphasis-100: #1d2632;
+  --ifm-color-emphasis-200: #263241;
+  --ifm-color-emphasis-300: #334155;
+  --ifm-color-emphasis-600: #94a3b8;
+  --ifm-color-emphasis-700: #cbd5e1;
+  --ifm-color-emphasis-800: #e2e8f0;
+  --ifm-color-emphasis-900: #f8fafc;
+
+  --ifm-navbar-background-color: rgba(13, 17, 23, 0.85);
+  --ifm-navbar-shadow: 0 20px 50px rgba(2, 8, 23, 0.55);
+  --ifm-footer-background-color: #090c10;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 28%),
+    var(--ifm-background-color);
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: var(--ifm-navbar-shadow) !important;
+}
+
+.navbar__brand,
+.navbar__link,
+.footer a {
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover,
+.footer a:hover {
+  color: var(--ifm-color-primary);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.card, .menu__list-item-collapsible {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.theme-doc-markdown,
+.blog-wrapper main,
+.pagination-nav,
+.table-of-contents {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.theme-doc-markdown h4,
+.theme-blog-post-page h1,
+.theme-blog-post-page h2,
+.theme-blog-post-page h3 {
+  letter-spacing: -0.02em;
+}
+
+.pagination-nav__link,
+.table-of-contents,
+.menu {
+  border-radius: 1rem;
+}
+
+.pagination-nav__link,
+.table-of-contents,
+.menu,
+.theme-doc-sidebar-container,
+.theme-blog-sidebar {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='dark'] .pagination-nav__link,
+[data-theme='dark'] .table-of-contents,
+[data-theme='dark'] .menu,
+[data-theme='dark'] .theme-doc-sidebar-container,
+[data-theme='dark'] .theme-blog-sidebar {
+  background: rgba(15, 23, 42, 0.66);
+}
+
+code {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.footer__title {
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.footer__copyright {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.button {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 996px) {
+  .navbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }

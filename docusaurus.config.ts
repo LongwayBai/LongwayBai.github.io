@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'LongwayBai',
-  tagline: '技术笔记与工具分享',
+  title: 'Longway Bai',
+  tagline: 'Developer notes, terminal habits, and toolsmith workflows',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -96,15 +96,16 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.svg',
     colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'LongwayBai',
+      title: 'Longway Bai',
       logo: {
-        alt: 'LongwayBai Logo',
+        alt: 'Longway Bai Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -112,9 +113,9 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '文档',
+          label: '笔记 / Notes',
         },
-        {to: '/blog', label: '博客', position: 'left'},
+        {to: '/blog', label: '文章 / Blog', position: 'left'},
         {
           href: 'https://github.com/LongwayBai/lazyvim-config',
           label: 'LazyVim',
@@ -131,36 +132,36 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: '文档',
+          title: '沉淀',
           items: [
             {
               label: 'LazyVim 配置',
               to: '/docs/lazyvim',
             },
             {
-              label: 'Tmux 配置',
+              label: 'Tmux 工作流',
               to: '/docs/tmux',
             },
           ],
         },
         {
-          title: '项目',
+          title: '开源',
           items: [
             {
               label: 'LazyVim Config',
               href: 'https://github.com/LongwayBai/lazyvim-config',
             },
             {
-              label: 'This Site',
+              label: 'Site Source',
               href: 'https://github.com/LongwayBai/LongwayBai.github.io',
             },
           ],
         },
         {
-          title: '更多',
+          title: '连接',
           items: [
             {
-              label: '博客',
+              label: '技术博客',
               to: '/blog',
             },
             {
@@ -170,7 +171,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} LongwayBai. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Longway Bai. Notes from the command line.`,
     },
     prism: {
       theme: prismThemes.github,
