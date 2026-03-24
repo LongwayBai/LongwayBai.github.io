@@ -64,6 +64,37 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en', 'zh'],
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
+        docsRouteBasePath: '/',
+        zhUserDict: [
+          '终端复用器',
+          '快捷键速查',
+          '安装与环境准备',
+          '安装与初始配置',
+          '插件与扩展',
+          '悬浮文档',
+          '代码格式化',
+          '文件管理',
+          '文档预览',
+        ].join('\n'),
+        removeDefaultStopWordFilter: true,
+        searchResultLimits: 10,
+        searchResultContextMaxLength: 100,
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        fuzzyMatchingDistance: 1,
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
