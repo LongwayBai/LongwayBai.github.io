@@ -1,23 +1,267 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+.main {
+  background-color: var(--ifm-background-color);
+  min-height: calc(100vh - 60px);
+}
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 7rem 0 6rem;
+  text-align: left;
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 34%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.16), transparent 28%),
+    linear-gradient(180deg, #07111f 0%, #0b1423 54%, #0f172a 100%);
+  color: #e2e8f0;
+  border-bottom: 1px solid rgba(71, 85, 105, 0.55);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 56rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: #7dd3fc;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 5.75rem);
+  font-weight: 800;
+  line-height: 0.98;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #8fe8ff 52%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  max-width: 42rem;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #bfd0e2;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.heroMeta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.42);
+  color: #cbd5e1;
+  font-size: 0.92rem;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 5rem 0 4rem;
   }
 }
 
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primaryCta {
+  background: linear-gradient(135deg, #67e8f9 0%, #38bdf8 100%);
+  color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 16px 40px rgba(14, 165, 233, 0.24);
+}
+
+.primaryCta:hover {
+  background: linear-gradient(135deg, #a5f3fc 0%, #38bdf8 100%);
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(56, 189, 248, 0.28);
+}
+
+.secondaryCta {
+  border-color: rgba(148, 163, 184, 0.35);
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.secondaryCta:hover {
+  background-color: rgba(30, 41, 59, 0.65);
+  border-color: rgba(125, 211, 252, 0.35);
+  color: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 85%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.terminalSection {
+  padding: 4rem 0 2rem;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.06), transparent 35%);
+}
+
+.terminalContainer {
+  max-width: 52rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #101826 0%, #0d1420 100%);
+  border-radius: 1.25rem;
+  box-shadow: 0 30px 80px rgba(2, 8, 23, 0.4);
+  overflow: hidden;
+  font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+.terminalHeader {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+  position: relative;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.terminalTitle {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.terminalBody {
+  padding: 1.75rem;
+  color: #e2e8f0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.prompt {
+  color: #38bdf8;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.output {
+  color: #a8c0d8;
+  margin: 0.5rem 0 1.25rem 0;
+}
+
+.successLine {
+  color: #34d399;
+}
+
+.workflowSection {
+  padding: 1rem 0 4rem;
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.workflowCard {
+  height: 100%;
+  padding: 1.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.56)),
+    rgba(15, 23, 42, 0.75);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.1);
+}
+
+.cardLabel {
+  margin: 0 0 0.85rem;
+  color: var(--ifm-color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.cardTitle {
+  margin-bottom: 0.85rem;
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.cardText {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.8;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: #e0e0e0;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media screen and (max-width: 996px) {
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .workflowGrid {
+    grid-template-columns: 1fr;
+  }
 }
