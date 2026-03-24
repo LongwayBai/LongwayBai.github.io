@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="36" fill="#081120"/>
+  <rect x="42" y="42" width="1116" height="546" rx="28" fill="url(#panel)" stroke="#17304C"/>
+  <g opacity="0.55">
+    <path d="M82 132H1118" stroke="#16324D"/>
+    <path d="M82 218H1118" stroke="#16324D"/>
+    <path d="M82 304H1118" stroke="#16324D"/>
+    <path d="M82 390H1118" stroke="#16324D"/>
+    <path d="M82 476H1118" stroke="#16324D"/>
+    <path d="M190 82V548" stroke="#16324D"/>
+    <path d="M406 82V548" stroke="#16324D"/>
+    <path d="M622 82V548" stroke="#16324D"/>
+    <path d="M838 82V548" stroke="#16324D"/>
+    <path d="M1054 82V548" stroke="#16324D"/>
+  </g>
+  <rect x="104" y="118" width="124" height="124" rx="28" fill="#0D1117" stroke="#1F3B57"/>
+  <path d="M146 146V214H204" stroke="#38BDF8" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M186 174H218V214" stroke="#32D8B4" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="274" y="186" fill="#E2E8F0" font-family="Helvetica, Arial, sans-serif" font-size="68" font-weight="700">Longway Bai</text>
+  <text x="274" y="252" fill="#8FB9D6" font-family="Helvetica, Arial, sans-serif" font-size="28">Developer Notes on Neovim, Tmux, Linux, and Tooling</text>
+  <rect x="104" y="320" width="304" height="66" rx="33" fill="#0E2238" stroke="#1D4767"/>
+  <rect x="428" y="320" width="278" height="66" rx="33" fill="#0E2238" stroke="#1D4767"/>
+  <rect x="726" y="320" width="278" height="66" rx="33" fill="#0E2238" stroke="#1D4767"/>
+  <text x="142" y="361" fill="#67E8F9" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700">Terminal-first workflows</text>
+  <text x="466" y="361" fill="#67E8F9" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700">Config notes</text>
+  <text x="763" y="361" fill="#67E8F9" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700">Debug diaries</text>
+  <text x="104" y="470" fill="#D7E4F0" font-family="Courier New, monospace" font-size="30">$ ls focus-areas/</text>
+  <text x="104" y="520" fill="#90AFC7" font-family="Courier New, monospace" font-size="28">neovim-config   tmux-workflows   linux-ops   dev-tooling</text>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="42" x2="600" y2="588" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1728"/>
+      <stop offset="1" stop-color="#09111E"/>
+    </linearGradient>
+  </defs>
+</svg>
