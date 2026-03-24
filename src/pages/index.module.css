@@ -20,6 +20,120 @@
   position: relative;
   z-index: 2;
   max-width: 56rem;
+  flex: 1 1 50%;
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.heroVisual {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 2;
+}
+
+.techGraphic {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+}
+
+.animatedSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 20px 40px rgba(2, 8, 23, 0.6));
+}
+
+.orbits {
+  transform-origin: 200px 200px;
+  animation: spinSlow 40s linear infinite;
+}
+
+.nodes circle {
+  transform-origin: 200px 200px;
+}
+
+.node1 { animation: pulseGlow 3s ease-in-out infinite alternate; }
+.node2 { animation: pulseGlow 4s ease-in-out infinite alternate 1s; }
+.node3 { animation: pulseGlow 3.5s ease-in-out infinite alternate 2s; }
+.node4 { animation: pulseGlow 4.5s ease-in-out infinite alternate 0.5s; }
+
+.connections {
+  transform-origin: 200px 200px;
+  animation: spinSlow 30s linear infinite reverse;
+}
+
+.connectionsInner {
+  transform-origin: 200px 200px;
+  animation: spinSlow 20s linear infinite;
+  stroke-dasharray: 4 6;
+  animation: dashMove 20s linear infinite, spinSlow 20s linear infinite;
+}
+
+.core {
+  animation: coreGlow 4s ease-in-out infinite alternate;
+}
+
+.corePulse {
+  transform-origin: 200px 200px;
+  animation: scalePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: 100; }
+}
+
+@keyframes coreGlow {
+  0% { filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4)); }
+  100% { filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.8)); }
+}
+
+@keyframes scalePulse {
+  0% { transform: rotate(45deg) scale(0.8); opacity: 0.4; }
+  100% { transform: rotate(45deg) scale(1.4); opacity: 1; stroke: #a5f3fc; }
+}
+
+@media screen and (max-width: 996px) {
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .heroContent {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .heroVisual {
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    max-width: 320px;
+  }
+  
+  .heroMeta {
+    justify-content: center;
+  }
 }
 
 .eyebrow {

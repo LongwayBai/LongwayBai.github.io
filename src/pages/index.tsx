@@ -12,7 +12,7 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner)}>
-      <div className="container">
+      <div className={clsx("container", styles.heroContainer)}>
         <div className={styles.heroContent}>
           <p className={styles.eyebrow}>{siteConfig.tagline}</p>
           <Heading
@@ -42,6 +42,37 @@ function HomepageHeader() {
             <span>Terminal-first workflows</span>
             <span>Config notes that stay practical</span>
             <span>Long-form troubleshooting logs</span>
+          </div>
+        </div>
+        <div className={styles.heroVisual}>
+          <div className={styles.techGraphic}>
+            <svg viewBox="0 0 400 400" className={styles.animatedSvg} xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grid-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.1" />
+                </linearGradient>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              <g className={styles.orbits}>
+                <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(56, 189, 248, 0.15)" strokeWidth="1" strokeDasharray="4 4" />
+                <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(56, 189, 248, 0.2)" strokeWidth="1" />
+                <circle cx="200" cy="200" r="60" fill="none" stroke="rgba(56, 189, 248, 0.3)" strokeWidth="1" strokeDasharray="2 6" />
+              </g>
+              <g className={styles.nodes}>
+                <circle cx="200" cy="60" r="6" fill="#38bdf8" filter="url(#glow)" className={styles.node1} />
+                <circle cx="340" cy="200" r="5" fill="#7dd3fc" filter="url(#glow)" className={styles.node2} />
+                <circle cx="200" cy="340" r="4" fill="#0284c7" filter="url(#glow)" className={styles.node3} />
+                <circle cx="60" cy="200" r="7" fill="#38bdf8" filter="url(#glow)" className={styles.node4} />
+              </g>
+              <path d="M 200 60 L 340 200 L 200 340 L 60 200 Z" fill="none" stroke="url(#grid-grad)" strokeWidth="1.5" className={styles.connections} />
+              <path d="M 200 100 L 300 200 L 200 300 L 100 200 Z" fill="none" stroke="rgba(56, 189, 248, 0.4)" strokeWidth="1" className={styles.connectionsInner} />
+              <circle cx="200" cy="200" r="24" fill="rgba(15, 23, 42, 0.8)" stroke="#38bdf8" strokeWidth="2" filter="url(#glow)" className={styles.core} />
+              <rect x="188" y="188" width="24" height="24" fill="none" stroke="#7dd3fc" strokeWidth="1.5" transform="rotate(45 200 200)" className={styles.corePulse} />
+            </svg>
           </div>
         </div>
       </div>
