@@ -1,19 +1,19 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+neovim:
+  label: Neovim
+  permalink: /neovim
+  description: Notes about editor setup, keymaps, and terminal-first editing.
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+tmux:
+  label: Tmux
+  permalink: /tmux
+  description: Session management, pane workflows, and command-line ergonomics.
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+linux:
+  label: Linux
+  permalink: /linux
+  description: Shell habits, system setup, and practical operating-system notes.
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+tooling:
+  label: Tooling
+  permalink: /tooling
+  description: Developer workflow glue, small utilities, and durable setup choices.
