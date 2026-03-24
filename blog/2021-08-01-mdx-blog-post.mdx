@@ -1,24 +1,28 @@
 ---
 slug: mdx-blog-post
-title: MDX Blog Post
-authors: [slorber]
-tags: [docusaurus]
+title: 用 MDX 记录命令、组件和实验片段
+authors: [longwaybai]
+tags: [tooling, neovim]
 ---
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+MDX 对我有价值的地方，不是“能玩 JSX”，而是它可以让一篇笔记在文字、代码和交互片段之间自然切换。
 
 :::tip
 
-Use the power of React to create interactive blog posts.
+适合需要同时放置命令片段、配置说明和小型交互示例的技术记录。
 
 :::
 
 {/* truncate */}
 
-For example, use JSX to create an interactive button:
+比如我可以用很小的组件，把某个命令意图直接嵌到文章上下文里：
 
 ```js
-<button onClick={() => alert('button clicked!')}>Click me!</button>
+<button onClick={() => alert('remember the workflow, not just the command')}>
+  Why this command exists
+</button>
 ```
 
-<button onClick={() => alert('button clicked!')}>Click me!</button>
+<button onClick={() => alert('remember the workflow, not just the command')}>
+  Why this command exists
+</button>

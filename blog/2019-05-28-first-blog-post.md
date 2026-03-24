@@ -1,12 +1,18 @@
 ---
 slug: first-blog-post
-title: First Blog Post
-authors: [slorber, yangshun]
-tags: [hola, docusaurus]
+title: 为什么我要把工作笔记公开整理成站点
+authors: [longwaybai]
+tags: [tooling, linux]
 ---
 
-Lorem ipsum dolor sit amet...
+很多技术积累并不是来自一次性的“学会”，而是来自重复踩坑后的稳定做法。
 
 <!-- truncate -->
 
-...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+这个站点的目标不是做教程全集，而是保留工作现场：
+
+- 当时为什么这样选
+- 试过哪些方案但放弃了
+- 最终方案的边界在哪里
+
+所以这里会更像一个持续更新的工程日志，记录 Neovim、Tmux、Linux 和日常开发工具链的真实使用过程。对于未来的自己，它是索引；对于路过的人，希望它也能节省一些排查时间。

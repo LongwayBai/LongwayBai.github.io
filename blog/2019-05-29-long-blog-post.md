@@ -1,44 +1,36 @@
 ---
 slug: long-blog-post
-title: Long Blog Post
-authors: yangshun
-tags: [hello, docusaurus]
+title: 我希望长期维护的终端开发工作流
+authors: [longwaybai]
+tags: [tmux, linux, tooling]
 ---
 
-This is the summary of a very long blog post,
+如果一个工作流不能连续使用几个月，它就还不够稳定。
 
-Use a `<!--` `truncate` `-->` comment to limit blog post size in the list view.
+我更偏爱终端优先的开发环境，不是因为“更酷”，而是因为它更容易沉淀、迁移和复现。
 
 <!-- truncate -->
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+我长期维护工作流时，通常看四件事：
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+1. **是否可以在新机器快速恢复**
+2. **是否能在 SSH / Server / Local 环境保持一致**
+3. **是否能承受临时需求，而不把配置越改越乱**
+4. **是否能让常用动作越来越短**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+围绕这四点，我会把编辑器、终端、多路复用器和 shell 工具拆成独立层次：
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+- **Neovim** 负责代码编辑与语义跳转
+- **Tmux** 负责会话与上下文保留
+- **Shell / CLI** 负责自动化与串联动作
+- **文档站点** 负责保存决策和案例
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+这样做的好处不是“组件化”本身，而是当某一层需要替换时，不会影响整套系统。比如换一个 LSP 插件，不应该连带推翻整个快捷键系统；改一个 shell alias，也不应该影响文章记录方式。
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+这个站点后续会持续记录这些层之间如何配合，包括：
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+- 项目切换时如何保留上下文
+- 如何把重复命令变成稳定脚本
+- 如何让笔记本身参与到工作流，而不是事后补写
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+如果一套工具配置最终不能帮助自己更快回到“问题本身”，那它就还值得继续调整。

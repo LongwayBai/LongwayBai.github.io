@@ -1,29 +1,21 @@
 ---
 slug: welcome
-title: Welcome
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+title: 站点现在主要记录什么
+authors: [longwaybai]
+tags: [neovim, tmux, tooling]
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+这个站点现在主要围绕几类内容展开：编辑器配置、终端工作流、Linux 环境，以及把这些工具串起来的方法。
 
-Here are a few tips you might find useful.
+这些内容不追求“从零到一”的完整教程，更像是可复用的现场笔记。
 
 <!-- truncate -->
 
-Simply add Markdown files (or folders) to the `blog` directory.
+我更关心以下几件事：
 
-Regular blog authors can be added to `authors.yml`.
+- 一个配置为什么存在
+- 它解决的是哪个真实问题
+- 它什么时候会失效
+- 下次迁移时最小需要带走什么
 
-The blog post date can be extracted from filenames, such as:
-
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
-
-A blog post folder can be convenient to co-locate blog post images:
-
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
-
-The blog supports tags as well!
-
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
+后续文章会尽量保留失败尝试和取舍过程，因为真正有价值的，通常不是最后那条命令，而是为什么最终只留下那条命令。
