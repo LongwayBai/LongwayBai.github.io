@@ -41,6 +41,18 @@
   --blog-list-tag-border: rgba(148, 163, 184, 0.2);
   --blog-list-tag-border-hover: rgba(0, 112, 243, 0.28);
   --blog-list-tag-hover-background: rgba(0, 112, 243, 0.08);
+
+  --doc-nav-panel-background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.88));
+  --doc-nav-panel-border: rgba(148, 163, 184, 0.22);
+  --doc-nav-panel-shadow: 0 24px 68px rgba(15, 23, 42, 0.08);
+  --doc-nav-link-hover-background: rgba(0, 112, 243, 0.08);
+  --doc-nav-link-active-background:
+    linear-gradient(135deg, rgba(0, 112, 243, 0.18), rgba(56, 189, 248, 0.08));
+  --doc-nav-link-active-border: rgba(0, 112, 243, 0.26);
+  --doc-nav-divider: rgba(148, 163, 184, 0.2);
+  --doc-nav-scrollbar-thumb: rgba(148, 163, 184, 0.45);
+  --doc-nav-surface-glow: rgba(255, 255, 255, 0.68);
 }
 
 [data-theme='dark'] {
@@ -81,6 +93,18 @@
   --blog-list-tag-border-hover: rgba(50, 216, 180, 0.36);
   --blog-list-tag-hover-background: rgba(50, 216, 180, 0.12);
 
+  --doc-nav-panel-background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.78));
+  --doc-nav-panel-border: rgba(100, 116, 139, 0.24);
+  --doc-nav-panel-shadow: 0 30px 82px rgba(2, 8, 23, 0.32);
+  --doc-nav-link-hover-background: rgba(50, 216, 180, 0.12);
+  --doc-nav-link-active-background:
+    linear-gradient(135deg, rgba(50, 216, 180, 0.18), rgba(15, 23, 42, 0.12));
+  --doc-nav-link-active-border: rgba(50, 216, 180, 0.34);
+  --doc-nav-divider: rgba(100, 116, 139, 0.24);
+  --doc-nav-scrollbar-thumb: rgba(148, 163, 184, 0.34);
+  --doc-nav-surface-glow: rgba(255, 255, 255, 0.04);
+
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
 
@@ -98,7 +122,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.16);
-  box-shadow: var(--ifm-navbar-shadow) !important;
+  box-shadow: var(--ifm-navbar-shadow);
 }
 
 .navbar__brand,
@@ -196,11 +220,214 @@ code {
   font-weight: 600;
 }
 
+.theme-doc-sidebar-container,
+.table-of-contents {
+  border-color: var(--doc-nav-panel-border);
+  background: var(--doc-nav-panel-background);
+  box-shadow: var(--doc-nav-panel-shadow);
+}
+
+.theme-doc-sidebar-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-doc-sidebar-container::before,
+.table-of-contents::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--doc-nav-surface-glow), transparent);
+  pointer-events: none;
+}
+
+.theme-doc-sidebar-menu,
+.table-of-contents {
+  scrollbar-width: thin;
+  scrollbar-color: var(--doc-nav-scrollbar-thumb) transparent;
+}
+
+.theme-doc-sidebar-menu::-webkit-scrollbar,
+.table-of-contents::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+.theme-doc-sidebar-menu::-webkit-scrollbar-thumb,
+.table-of-contents::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--doc-nav-scrollbar-thumb);
+}
+
+.theme-doc-sidebar-menu {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.8rem 0.7rem 1rem;
+  overscroll-behavior: contain;
+}
+
+.theme-doc-sidebar-menu .menu__list,
+.table-of-contents > ul {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.theme-doc-sidebar-menu .menu__list-item {
+  margin: 0;
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible {
+  margin: 0;
+  padding: 0.18rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible:hover {
+  border-color: var(--doc-nav-divider);
+  background: var(--doc-nav-link-hover-background);
+}
+
+.theme-doc-sidebar-menu .menu__link,
+.table-of-contents__link {
+  position: relative;
+  display: block;
+  min-height: 2.5rem;
+  padding: 0.62rem 0.85rem;
+  border-radius: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.35;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.theme-doc-sidebar-menu .menu__link:hover,
+.table-of-contents__link:hover {
+  color: var(--ifm-heading-color);
+  background: var(--doc-nav-link-hover-background);
+  transform: translateX(2px);
+}
+
+.theme-doc-sidebar-menu .menu__link:focus-visible,
+.table-of-contents__link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.theme-doc-sidebar-menu > .menu__list > .menu__list-item > .menu__link,
+.theme-doc-sidebar-menu > .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.theme-doc-sidebar-menu .menu__list .menu__list {
+  margin-top: 0.15rem;
+  margin-left: 0.95rem;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--doc-nav-divider);
+}
+
+.theme-doc-sidebar-menu .menu__list .menu__list .menu__link,
+.table-of-contents li ul .table-of-contents__link {
+  min-height: 2.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.theme-doc-sidebar-menu .menu__link--active,
+.theme-doc-sidebar-menu .menu__list-item-collapsible--active > .menu__link,
+.table-of-contents__link--active {
+  color: var(--ifm-heading-color);
+  background: var(--doc-nav-link-active-background);
+  box-shadow:
+    inset 0 0 0 1px var(--doc-nav-link-active-border),
+    inset 3px 0 0 var(--ifm-color-primary);
+}
+
+.theme-doc-sidebar-menu .menu__link--active::before,
+.table-of-contents__link--active::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.22rem;
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+}
+
+.theme-doc-sidebar-menu .menu__caret,
+.theme-doc-sidebar-menu .menu__link--sublist-caret::after {
+  color: var(--ifm-color-primary);
+}
+
+.table-of-contents {
+  position: relative;
+  padding: 0.9rem 0.75rem 1rem;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.table-of-contents > ul,
+.table-of-contents li ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.table-of-contents li ul {
+  margin-top: 0.2rem;
+  margin-left: 0.85rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--doc-nav-divider);
+}
+
+@media screen and (max-width: 996px) {
+  .theme-doc-sidebar-container,
+  .table-of-contents {
+    border-radius: 1rem;
+    box-shadow: none;
+  }
+
+  .theme-doc-sidebar-menu {
+    padding: 0.6rem;
+  }
+
+  .theme-doc-sidebar-menu .menu__link,
+  .table-of-contents__link {
+    min-height: 2.35rem;
+    padding-inline: 0.78rem;
+  }
+
+  .table-of-contents {
+    margin-top: 1rem;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .theme-doc-sidebar-menu .menu__list .menu__list,
+  .table-of-contents li ul {
+    margin-left: 0.7rem;
+    padding-left: 0.65rem;
+  }
+}
+
 .blog-wrapper.blog-list-page article.margin-bottom--xl {
   position: relative;
   overflow: hidden;
   display: grid;
   gap: 1rem;
+  /* biome-ignore lint/complexity/noImportantStyles: Infima utility margin-bottom--xl uses !important, so this local override must match it. */
   margin-bottom: 1.75rem !important;
   padding: 1.6rem;
   border: 1px solid var(--blog-list-card-border);
@@ -270,6 +497,7 @@ code {
   flex-wrap: wrap;
   gap: 0.45rem;
   width: fit-content;
+  /* biome-ignore lint/complexity/noImportantStyles: Infima utility margin-vert--md uses !important, so this badge reset must match it. */
   margin: 0 !important;
   padding: 0.55rem 0.85rem;
   border: 1px solid var(--blog-list-meta-border);
@@ -307,7 +535,7 @@ code {
 .blog-wrapper.blog-list-page article.margin-bottom--xl > footer.row {
   align-items: flex-start;
   row-gap: 0.9rem;
-  margin-top: 0 !important;
+  margin-top: 0;
   padding-top: 1rem;
   border-top: 1px solid var(--blog-list-divider);
 }
@@ -326,11 +554,11 @@ code {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 0 !important;
+  margin: 0;
 }
 
 .blog-wrapper.blog-list-page article.margin-bottom--xl > footer li {
-  margin: 0 !important;
+  margin: 0;
 }
 
 .blog-wrapper.blog-list-page article.margin-bottom--xl > footer a[rel='tag'] {
@@ -403,7 +631,7 @@ code {
   }
 
   .blog-wrapper.blog-list-page article.margin-bottom--xl > footer .text--right {
-    text-align: left !important;
+    text-align: left;
   }
 
   .blog-wrapper.blog-list-page article.margin-bottom--xl > footer .text--right a {
