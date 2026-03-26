@@ -27,15 +27,15 @@ function HomepageHeader() {
           <div className={styles.buttons}>
             <Link
               className={clsx('button button--primary button--lg', styles.primaryCta)}
-              to="/blog/"
+              to="/docs/intro"
               data-testid="home-primary-cta">
-              Read Blog
+              Browse Docs
             </Link>
             <Link
               className={clsx('button button--secondary button--outline button--lg', styles.secondaryCta)}
-              to="/docs/intro"
+              to="/blog/"
               data-testid="home-secondary-cta">
-              Browse Docs
+              Read Blog
             </Link>
           </div>
           <div className={styles.heroMeta}>
