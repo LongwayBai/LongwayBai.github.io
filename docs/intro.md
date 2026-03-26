@@ -25,5 +25,6 @@ sidebar_position: 1
 
 ## 当前内容
 
+- [OpenCode 使用笔记](/docs/opencode)
 - [LazyVim 配置](/docs/lazyvim)
 - [Tmux 配置](/docs/tmux)

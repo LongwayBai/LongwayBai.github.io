@@ -17,6 +17,11 @@ const sidebars: SidebarsConfig = {
     'intro',
     {
       type: 'category',
+      label: 'OpenCode 工作流',
+      items: ['opencode/index'],
+    },
+    {
+      type: 'category',
       label: 'LazyVim 配置',
       items: [
         'lazyvim/index',
