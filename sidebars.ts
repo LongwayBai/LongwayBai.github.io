@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'OpenCode 工作流',
-      items: ['opencode/index'],
+      items: ['opencode/index', 'opencode/oh-my-opencode'],
     },
     {
       type: 'category',
