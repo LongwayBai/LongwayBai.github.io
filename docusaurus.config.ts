@@ -115,7 +115,7 @@ const config: Config = {
           position: 'left',
           label: '笔记 / Notes',
         },
-        {to: '/blog', label: '博客\\Blog', position: 'left'},
+        {to: '/blog', label: '博客 / Blog', position: 'left'},
         {
           href: 'https://github.com/LongwayBai/lazyvim-config',
           label: 'LazyVim',
