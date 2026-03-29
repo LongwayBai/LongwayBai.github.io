@@ -33,7 +33,7 @@ Ctrl+a
 | `Ctrl+a x` | 关闭当前 pane |
 | `Ctrl+a +` | 最大化 / 还原当前 pane |
 
-![tmux 的左右分栏与上下分栏效果](/img/tmux/split-screen.png)
+![tmux 的左右分栏与上下分栏效果](./assets/split-screen.png)
 
 *图：把 `|` 记成左右分栏，把 `_` 记成上下分栏，通常比记术语更直观。*
 

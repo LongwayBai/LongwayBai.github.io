@@ -60,7 +60,7 @@ cd tmux-config
 ./install.sh
 ```
 
-![LongwayBai/tmux-config 的安装过程](/img/tmux/installation.gif)
+![LongwayBai/tmux-config 的安装过程](./assets/installation.gif)
 
 *图：安装脚本会备份旧配置、复制文件，并尝试调用 TPM 安装插件。*
 

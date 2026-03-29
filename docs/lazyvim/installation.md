@@ -78,7 +78,7 @@ nvim
 :Mason
 ```
 
-![Mason 界面](/img/lazyvim/mason.png)
+![Mason 界面](./assets/mason.png)
 
 *图：Mason 的管理界面。读这张图时，重点不是它列了多少工具，而是要知道这里负责的是“语言服务器和相关工具的安装状态”，不是整个系统运行时。*
 
