@@ -15,12 +15,12 @@ function HomepageHeader() {
       <div className={clsx("container", styles.heroContainer)}>
         <div className={styles.heroContent}>
           <p className={styles.eyebrow}>{siteConfig.tagline}</p>
-          <Heading
-            as="h1"
-            className={clsx('hero__title', styles.title)}
-            data-testid="home-hero-title">
-            Longway Bai
-          </Heading>
+            <Heading
+              as="h1"
+              className={clsx('hero__title', styles.title)}
+              data-testid="home-hero-title">
+              DocBit
+            </Heading>
           <p className={clsx('hero__subtitle', styles.subtitle)}>
             Developer Notes on Neovim, Tmux, Linux, and Tooling.
           </p>
@@ -144,7 +144,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Home"
-      description="Longway Bai's technical blog and developer notes">
+        description="DocBit technical blog and developer notes">
       <HomepageHeader />
       <main className={styles.main}>
         <TerminalSection />

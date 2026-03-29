@@ -5,9 +5,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Longway Bai',
+  title: 'DocBit',
   tagline: 'Developer notes, terminal habits, and toolsmith workflows',
-  favicon: 'img/favicon.ico',
+  favicon: '/img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -103,9 +103,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Longway Bai',
+      title: 'DocBit',
       logo: {
-        alt: 'Longway Bai Logo',
+        alt: 'DocBit Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -171,7 +171,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Longway Bai. Notes from the command line.`,
+      copyright: `Copyright © ${new Date().getFullYear()} DocBit. Notes from the command line.`,
     },
     prism: {
       theme: prismThemes.github,
