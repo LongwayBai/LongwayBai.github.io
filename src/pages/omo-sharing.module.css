@@ -1,0 +1,221 @@
+.main {
+  background-color: var(--ifm-background-color);
+  min-height: calc(100vh - 60px);
+}
+
+.slideSection {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.slideSection:nth-child(even) {
+  background: var(--ifm-background-surface-color);
+}
+
+.heroSlide {
+  min-height: calc(100vh - 60px);
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.05), transparent 40%);
+}
+
+.slideContent {
+  max-width: 64rem;
+  width: 100%;
+}
+
+.slideTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme='dark'] .heroTitle {
+  background: linear-gradient(135deg, #f8fbff 0%, #8fe8ff 52%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slideText {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 1.5rem;
+}
+
+.heroNote,
+.slideNote {
+  margin: 0 auto 1.5rem;
+  max-width: 48rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.heroNote {
+  margin-top: -0.25rem;
+}
+
+.heroNote code,
+.slideNote code {
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  padding: 1.75rem;
+  border-radius: 1rem;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+[data-theme='dark'] .card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.15);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardText {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.terminalContainer {
+  max-width: 56rem;
+  margin: 2rem auto;
+  background: #0f172a;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+  text-align: left;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.terminalHeader {
+  background: #1e293b;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.terminalBody {
+  padding: 1.5rem;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.prompt {
+  color: #38bdf8;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.cmd {
+  color: #f8fafc;
+}
+
+.output {
+  color: #94a3b8;
+  margin: 0.5rem 0 1.25rem 0;
+}
+
+.highlight {
+  color: #34d399;
+}
+
+.agentTag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.sisyphus { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+.explore { background: rgba(167, 139, 250, 0.2); color: #a78bfa; }
+.librarian { background: rgba(251, 146, 60, 0.2); color: #fb923c; }
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: #e2e8f0;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.list {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.list li {
+  margin-bottom: 0.75rem;
+}
