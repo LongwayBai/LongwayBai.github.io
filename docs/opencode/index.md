@@ -280,10 +280,13 @@ opencode run "帮我看一下这个仓库里为什么 sidebar 没有显示新页
 - [Agents 文档](https://opencode.ai/docs/agents/)
 - [GitHub 仓库](https://github.com/anomalyco/opencode)
 
-如果你后面想在文档里继续加图，官方现成可用的图至少有两张：
+如果你后面也想给自己的 OpenCode 介绍文档补一张图，最省事的做法不是自己临时截，而是先直接用官方这张 TUI 截图。它的信息量已经够用了：左边是会话和上下文，右边是当前交互区，基本一眼就能让人明白 OpenCode 不是单纯的聊天框，而是一个会在终端里真正执行任务的工作界面。
 
-- TUI 截图：`https://opencode.ai/docs/_astro/screenshot.CQjBbRyJ_1dLadc.webp`
-- 首页展示图：可以直接从官方仓库 `packages/web/src/assets/lander/screenshot.png` 引用
+![OpenCode 官方 TUI 截图](https://opencode.ai/docs/_astro/screenshot.CQjBbRyJ_1dLadc.webp)
+
+*图：OpenCode 官方文档里的 TUI 截图。如果只是想先把文章结构搭起来，这张图本身就足够拿来解释它的大致工作形态。*
+
+如果你更想放一张偏“产品展示感”的大图，也可以去官方仓库里找首页那张素材：`packages/web/src/assets/lander/screenshot.png`。我的建议是，先用这张终端截图把“它长什么样”讲清楚，再决定要不要补首页展示图；这样整篇文档会更像在介绍一个真实工作流，而不是在堆宣传素材。
 
 ## 最后一句
 
