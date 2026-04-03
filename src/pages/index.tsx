@@ -140,38 +140,6 @@ function WorkflowSection() {
   );
 }
 
-function OmoSharingHighlight() {
-  return (
-    <section className={styles.highlightSection}>
-      <div className="container">
-        <article className={styles.highlightCard}>
-          <div className={styles.highlightContent}>
-            <p className={styles.cardLabel}>FEATURED: OH MY OPENCODE</p>
-            <Heading as="h2" className={styles.highlightTitle}>
-              Build software at the speed of thought.
-            </Heading>
-            <p className={styles.highlightText}>
-              Discover how AI-native development workflows are changing the way we build software. Watch the full OMO (Oh My OpenCode) sharing presentation or read the detailed technical breakdown on how to leverage agentic workflows effectively.
-            </p>
-            <div className={styles.highlightButtons}>
-              <Link
-                className={clsx('button button--primary button--lg', styles.highlightPrimaryCta)}
-                to="/omo-sharing/">
-                View Presentation
-              </Link>
-              <Link
-                className={clsx('button button--secondary button--outline button--lg', styles.highlightSecondaryCta)}
-                to="/docs/opencode/oh-my-opencode">
-                Read Deep-Dive
-              </Link>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  );
-}
-
 export default function Home(): ReactNode {
   return (
     <Layout
@@ -181,7 +149,6 @@ export default function Home(): ReactNode {
       <main className={styles.main}>
         <TerminalSection />
         <WorkflowSection />
-        <OmoSharingHighlight />
         <HomepageFeatures />
       </main>
     </Layout>
