@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'DocBit',
   tagline: 'Developer notes, terminal habits, and toolsmith workflows',
-  favicon: '/img/favicon.svg',
+  favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -106,7 +106,8 @@ const config: Config = {
       title: 'DocBit',
       logo: {
         alt: 'DocBit Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo-light.png',
+        srcDark: 'img/logo-dark.png',
       },
       items: [
         {
