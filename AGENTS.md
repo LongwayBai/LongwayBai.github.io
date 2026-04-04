@@ -6,9 +6,9 @@ This file provides context and guidelines for AI agents operating in this reposi
 
 ## 1. Project Overview
 
-**Project Name**: LongwayBai.github.io  
+**Project Name**: DocBit.github.io  
 **Type**: Docusaurus 3.9.2 Static Documentation Website  
-**URL**: https://longwaybai.github.io  
+**URL**: https://DocBit.github.io  
 **Node.js**: >= 20.0 (required)
 
 This is a personal technical blog and documentation site built with Docusaurus. It contains notes, tutorials, and configuration guides for tools like LazyVim and Tmux.
@@ -237,7 +237,7 @@ Key settings in `docusaurus.config.ts`:
 
 | Setting | Value |
 |---------|-------|
-| URL | https://longwaybai.github.io |
+| URL | https://DocBit.github.io |
 | baseUrl | / |
 | onBrokenLinks | throw |
 | i18n | English only |

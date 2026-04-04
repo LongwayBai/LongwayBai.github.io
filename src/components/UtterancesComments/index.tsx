@@ -4,7 +4,7 @@ import {useColorMode} from '@docusaurus/theme-common';
 import {useLocation} from '@docusaurus/router';
 
 const UTTERANCES_ORIGIN = 'https://utteranc.es';
-const UTTERANCES_REPO = 'LongwayBai/LongwayBai.github.io';
+const UTTERANCES_REPO = 'LongwayBai/DocBit.github.io';
 
 function getUtterancesTheme(colorMode: 'light' | 'dark'): string {
   return colorMode === 'dark' ? 'github-dark' : 'github-light';

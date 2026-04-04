@@ -5,9 +5,9 @@
 > 当前站点类型：**GitHub Pages 用户站点**
 >
 > - GitHub 用户：`LongwayBai`
-> - 仓库名：`LongwayBai.github.io`
-> - 默认域名：`https://longwaybai.github.io`（当前生效域名）
-> - 目标自定义域名：`https://docbit.github.io`（配置中，待生效）
+> - 仓库名：`DocBit.github.io`
+> - 默认域名：`https://DocBit.github.io`
+> - 当前访问域名：`https://DocBit.github.io`
 
 ---
 
@@ -16,7 +16,7 @@
 - `docusaurus.config.ts`：站点 URL / baseUrl / GitHub 信息（影响页面链接、资源路径、Edit this page 等）
 - `docs/`：文档内容（会生成到站点的 `/docs/...`）
 - `src/`、`static/`：自定义页面、组件与静态资源
-- `static/CNAME`：自定义域名配置文件，内容应为 `docbit.github.io`
+- `static/CNAME`：自定义域名配置文件，内容应为 `DocBit.github.io`
 - `build/`：本地构建输出目录（**不用提交**，会由 CI 构建生成并部署）
 - `.github/workflows/deploy-pages.yml`：GitHub Actions 自动构建并发布到 Pages 的工作流
 
@@ -28,18 +28,17 @@
 
 在 `docusaurus.config.ts` 中设置：
 
-- `url: 'https://docbit.github.io'`
+- `url: 'https://DocBit.github.io'`
 - `baseUrl: '/'`
 - `organizationName: 'LongwayBai'`
-- `projectName: 'docbit.github.io'`
+- `projectName: 'DocBit.github.io'`
 
 ### 2.2 自定义域名配置 (Custom Domain)
 
-本项目**目标**使用 `docbit.github.io` 作为自定义域名。
+本项目使用 `DocBit.github.io` 作为访问域名。
 
-1. **仓库端配置**（已完成）：在 `static/CNAME` 文件中写入 `docbit.github.io`。这确保了每次部署后 GitHub Pages 都能获取此域名配置。
-2. **GitHub 端配置**（待验证）：需在 GitHub 仓库的 **Settings → Pages → Custom domain** 中填写 `docbit.github.io`。
-   - **重要提示**：如果 GitHub Pages 设置界面无法保存该自定义域名，通常是因为 DNS 记录尚未指向 GitHub。`static/CNAME` 仅是仓库侧的先决条件，GitHub 侧的最终绑定仍依赖于 GitHub 的验证过程。在验证成功前，默认访问地址仍为 `https://longwaybai.github.io`。
+1. **仓库端配置**：在 `static/CNAME` 文件中写入 `DocBit.github.io`，并与当前仓库名保持一致。
+2. **GitHub 端配置**：确认 GitHub 仓库的 **Settings → Pages** 指向当前仓库发布结果，并使用 `DocBit.github.io` 作为对外访问域名。
 
 ### 2.3 GitHub Actions 自动部署
 
@@ -82,5 +81,5 @@ git push
 
 ## 5. 常见问题
 
-- **页面 404**：如果是新设置的自定义域名，DNS 生效可能需要几分钟到几小时。
+- **页面 404**：如果仓库刚完成改名，先确认 Pages 已绑定到 `DocBit.github.io`，然后等待 GitHub Pages 配置生效。
 - **样式缺失**：检查 `docusaurus.config.ts` 中的 `baseUrl` 是否为 `/`。
