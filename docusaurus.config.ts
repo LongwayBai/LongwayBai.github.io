@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://DocBit.github.io',
+  url: 'https://docbit.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -23,7 +23,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'LongwayBai', // Usually your GitHub org/user name.
-  projectName: 'DocBit.github.io', // Usually your repo name.
+  projectName: 'docbit.github.io', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -42,7 +42,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/LongwayBai/DocBit.github.io/tree/main/',
+          editUrl: 'https://github.com/LongwayBai/LongwayBai.github.io/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -109,7 +109,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/LongwayBai/DocBit.github.io',
+          href: 'https://github.com/LongwayBai/LongwayBai.github.io',
           label: 'GitHub',
           position: 'right',
         },
@@ -140,7 +140,7 @@ const config: Config = {
             },
             {
               label: 'Site Source',
-              href: 'https://github.com/LongwayBai/DocBit.github.io',
+              href: 'https://github.com/LongwayBai/LongwayBai.github.io',
             },
           ],
         },
