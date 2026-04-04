@@ -33,9 +33,9 @@ function HomepageHeader() {
             </Link>
             <Link
               className={clsx('button button--secondary button--outline button--lg', styles.secondaryCta)}
-              to="/docs/intro"
+              to="#features"
               data-testid="home-secondary-cta">
-              Open Notes
+              Explore Topics
             </Link>
           </div>
           <div className={styles.heroMeta}>

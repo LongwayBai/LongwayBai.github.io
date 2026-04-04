@@ -33,17 +33,6 @@ function SplitPaneIcon(): ReactNode {
   );
 }
 
-function LinuxIcon(): ReactNode {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={styles.featureSvg}>
-      <path d="M16 5c4 0 7 3.6 7 8.3 0 1.4-.3 2.7-.9 3.8.9.9 1.4 2.2 1.4 3.7 0 3.4-3.4 6.2-7.5 6.2s-7.5-2.8-7.5-6.2c0-1.5.5-2.8 1.4-3.7-.6-1.1-.9-2.4-.9-3.8C9 8.6 12 5 16 5Z" />
-      <circle cx="13" cy="13" r="1.2" className={styles.accentFill} />
-      <circle cx="19" cy="13" r="1.2" className={styles.accentFill} />
-      <path d="M13 19c1 .8 2 .8 3 .8s2 0 3-.8" className={styles.accentStroke} />
-    </svg>
-  );
-}
-
 function ToolingIcon(): ReactNode {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" className={styles.featureSvg}>
@@ -77,24 +66,13 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Linux Systems',
-    icon: <LinuxIcon />,
-    link: '/docs/intro',
-    description: (
-      <>
-        Shell scripting, package management, debugging sessions, and practical
-        notes from living in Linux every day.
-      </>
-    ),
-  },
-  {
-    title: 'Tooling Notes',
+    title: 'OpenCode Assistant',
     icon: <ToolingIcon />,
-    link: '/docs/intro',
+    link: '/docs/opencode',
     description: (
       <>
-        Small utilities, workflow glue, and environment decisions that help a
-        developer setup stay durable over time.
+        AI-driven development notes, configuring OpenCode agents, and integrating
+        autonomous coding into terminal workflows.
       </>
     ),
   },
@@ -122,10 +100,10 @@ export default function HomepageFeatures(): ReactNode {
     <section className={styles.features} data-testid="featured-topics">
       <div className="container">
         <div className={styles.sectionHeader}>
-          <Heading as="h2" className={styles.sectionTitle}>Featured Topics</Heading>
+          <Heading as="h2" id="features" className={styles.sectionTitle}>Featured Topics</Heading>
           <p className={styles.sectionSubtitle}>
-            Follow the main threads of this notes library: editors, terminal
-            sessions, Linux systems, and the tooling that ties everything together.
+            Start from the stable documentation hubs for editors, terminal
+            workflows, and AI-assisted development notes.
           </p>
         </div>
         <div className="row">
