@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'docbit.github.io',
+  title: 'DocBit',
   tagline: 'Developer notes, terminal habits, and toolsmith workflows',
   favicon: 'img/favicon.ico',
 
@@ -90,9 +90,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'docbit.github.io',
+      title: 'DocBit',
       logo: {
-        alt: 'docbit.github.io Logo',
+        alt: 'DocBit Logo',
         src: 'img/logo-light.png',
         srcDark: 'img/logo-dark.png',
       },
@@ -154,7 +154,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} docbit.github.io. Notes from the command line.`,
+      copyright: `Copyright © ${new Date().getFullYear()} DocBit. Notes from the command line.`,
     },
     prism: {
       theme: prismThemes.github,

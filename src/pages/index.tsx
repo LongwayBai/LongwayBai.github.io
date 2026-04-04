@@ -19,7 +19,7 @@ function HomepageHeader() {
               as="h1"
               className={clsx('hero__title', styles.title)}
               data-testid="home-hero-title">
-              docbit.github.io
+              DocBit
             </Heading>
           <p className={clsx('hero__subtitle', styles.subtitle)}>
             Developer Notes on Neovim, Tmux, Linux, and Tooling.
@@ -144,7 +144,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Home"
-        description="docbit.github.io developer notes and practical documentation">
+        description="DocBit developer notes and practical documentation">
       <HomepageHeader />
       <main className={styles.main}>
         <TerminalSection />
