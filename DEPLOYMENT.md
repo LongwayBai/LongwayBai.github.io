@@ -14,7 +14,6 @@
 
 - `docusaurus.config.ts`：站点 URL / baseUrl / GitHub 信息（影响页面链接、资源路径、Edit this page 等）
 - `docs/`：文档内容（会生成到站点的 `/docs/...`）
-- `blog/`：博客内容（会生成到站点的 `/blog/...`）
 - `src/`、`static/`：自定义页面、组件与静态资源
 - `build/`：本地构建输出目录（**不用提交**，会由 CI 构建生成并部署）
 - `.github/workflows/deploy-pages.yml`：GitHub Actions 自动构建并发布到 Pages 的工作流
@@ -99,18 +98,7 @@ npm run start
 
 浏览器访问本地开发地址（命令行会提示，一般是 `http://localhost:3000`）。
 
-### 3.2 更新博客（Blog）
-
-- 博客目录：`blog/`
-- 新增一篇文章：创建 `blog/YYYY-MM-DD-title.md`（或 `.mdx`）
-
-例如：
-
-```text
-blog/2026-01-24-my-first-post.md
-```
-
-### 3.3 更新图片/静态资源
+### 3.2 更新图片/静态资源
 
 两种常用方式：
 
@@ -120,7 +108,7 @@ blog/2026-01-24-my-first-post.md
 
 2. 放在 `src/` 相关目录里，通过组件/导入使用（适合需要打包处理的资源）。
 
-### 3.4 本地构建验证（建议在大改动后做一次）
+### 3.3 本地构建验证（建议在大改动后做一次）
 
 ```bash
 npm run build
@@ -130,7 +118,7 @@ npm run serve
 - `build`：生成静态站点到 `build/`
 - `serve`：本地以生产方式预览构建产物
 
-### 3.5 提交并触发自动部署
+### 3.4 提交并触发自动部署
 
 ```bash
 git add -A
@@ -189,6 +177,6 @@ git push
 
 ## 7. 快速备忘（TL;DR）
 
-- 更新内容：改 `docs/` 或 `blog/` → `git commit` → `git push`
+- 更新内容：改 `docs/`、`src/` 或 `static/` → `git commit` → `git push`
 - 发布机制：push 到 `main` → Actions 构建 → 自动部署 Pages
 - 访问地址：`https://longwaybai.github.io`

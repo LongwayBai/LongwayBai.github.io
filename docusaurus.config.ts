@@ -44,20 +44,6 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/LongwayBai/LongwayBai.github.io/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          blogSidebarCount: 0,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/LongwayBai/LongwayBai.github.io/tree/main/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -72,7 +58,7 @@ const config: Config = {
         hashed: true,
         language: ['en', 'zh'],
         indexDocs: true,
-        indexBlog: true,
+        indexBlog: false,
         indexPages: true,
         docsRouteBasePath: '/',
         zhUserDict: [
@@ -117,7 +103,6 @@ const config: Config = {
           position: 'left',
           label: '笔记 / Notes',
         },
-        {to: '/blog', label: '博客 / Blog', position: 'left'},
         {
           href: 'https://github.com/LongwayBai/lazyvim-config',
           label: 'LazyVim',
@@ -162,10 +147,6 @@ const config: Config = {
         {
           title: '连接',
           items: [
-            {
-              label: '技术博客',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/LongwayBai',

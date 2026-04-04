@@ -79,7 +79,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Linux Systems',
     icon: <LinuxIcon />,
-    link: '/blog',
+    link: '/docs/intro',
     description: (
       <>
         Shell scripting, package management, debugging sessions, and practical
@@ -124,7 +124,7 @@ export default function HomepageFeatures(): ReactNode {
         <div className={styles.sectionHeader}>
           <Heading as="h2" className={styles.sectionTitle}>Featured Topics</Heading>
           <p className={styles.sectionSubtitle}>
-            Follow the main threads of this developer blog: editors, terminal
+            Follow the main threads of this notes library: editors, terminal
             sessions, Linux systems, and the tooling that ties everything together.
           </p>
         </div>

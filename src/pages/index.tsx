@@ -33,9 +33,9 @@ function HomepageHeader() {
             </Link>
             <Link
               className={clsx('button button--secondary button--outline button--lg', styles.secondaryCta)}
-              to="/blog/"
+              to="/docs/intro"
               data-testid="home-secondary-cta">
-              Read Blog
+              Open Notes
             </Link>
           </div>
           <div className={styles.heroMeta}>
@@ -144,7 +144,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Home"
-        description="DocBit technical blog and developer notes">
+        description="DocBit developer notes and practical documentation">
       <HomepageHeader />
       <main className={styles.main}>
         <TerminalSection />
