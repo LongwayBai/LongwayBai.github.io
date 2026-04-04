@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'DocBit',
+  title: 'docbit.github.io',
   tagline: 'Developer notes, terminal habits, and toolsmith workflows',
   favicon: 'img/favicon.ico',
 
@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://longwaybai.github.io',
+  url: 'https://docbit.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -23,7 +23,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'LongwayBai', // Usually your GitHub org/user name.
-  projectName: 'LongwayBai.github.io', // Usually your repo name.
+  projectName: 'docbit.github.io', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -90,9 +90,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'DocBit',
+      title: 'docbit.github.io',
       logo: {
-        alt: 'DocBit Logo',
+        alt: 'docbit.github.io Logo',
         src: 'img/logo-light.png',
         srcDark: 'img/logo-dark.png',
       },
@@ -154,7 +154,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} DocBit. Notes from the command line.`,
+      copyright: `Copyright © ${new Date().getFullYear()} docbit.github.io. Notes from the command line.`,
     },
     prism: {
       theme: prismThemes.github,
