@@ -98,20 +98,10 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: '笔记 / Notes',
-        },
-        {
-          href: 'https://github.com/LongwayBai/lazyvim-config',
-          label: 'LazyVim',
-          position: 'right',
-        },
-        {
           href: 'https://github.com/LongwayBai/LongwayBai.github.io',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
