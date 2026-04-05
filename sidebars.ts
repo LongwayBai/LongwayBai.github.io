@@ -16,11 +16,6 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
     {
-      type: 'link',
-      label: 'GitHub',
-      href: 'https://github.com/LongwayBai/LongwayBai.github.io',
-    },
-    {
       type: 'category',
       label: 'OpenCode 工作流',
       items: ['opencode/index', 'opencode/oh-my-opencode'],
