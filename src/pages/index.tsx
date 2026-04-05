@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import VisitorCounter from '@site/src/components/VisitorCounter';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -43,6 +44,11 @@ function HomepageHeader() {
             <span>Config notes that stay practical</span>
             <span>Long-form troubleshooting logs</span>
           </div>
+          <VisitorCounter
+            className={styles.heroCounter}
+            mode="site"
+            testId="home-visitor-counter"
+          />
         </div>
         <div className={styles.heroVisual}>
           <div className={styles.techGraphic}>
