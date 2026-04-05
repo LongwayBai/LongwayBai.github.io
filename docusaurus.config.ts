@@ -98,6 +98,11 @@ const config: Config = {
       },
       items: [
         {
+          label: '笔记 / Notes',
+          to: '/docs/intro',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/LongwayBai/LongwayBai.github.io',
           position: 'right',
           className: 'header-github-link',
