@@ -10,14 +10,14 @@ test('site mode maps to Busuanzi site total ids', () => {
     items: [
       {
         containerId: 'busuanzi_container_site_pv',
-        label: 'Total visits',
-        suffix: 'views',
+        label: '累计访问',
+        suffix: '次',
         valueId: 'busuanzi_value_site_pv',
       },
       {
         containerId: 'busuanzi_container_site_uv',
-        label: 'Unique visitors',
-        suffix: 'people',
+        label: '累计访客',
+        suffix: '人',
         valueId: 'busuanzi_value_site_uv',
       },
     ],
@@ -29,8 +29,8 @@ test('page mode maps to the Busuanzi page view id', () => {
     items: [
       {
         containerId: 'busuanzi_container_page_pv',
-        label: 'Page views',
-        suffix: 'views',
+        label: '阅读次数',
+        suffix: '次',
         valueId: 'busuanzi_value_page_pv',
       },
     ],
