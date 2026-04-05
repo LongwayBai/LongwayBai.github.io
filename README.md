@@ -1,5 +1,7 @@
 # DocBit
 
+[English](./README.en.md) | 简体中文
+
 DocBit 是一个基于 Docusaurus 构建的个人技术笔记站点，用来整理日常开发中的工具配置、终端工作流、问题排查记录和阶段性思考。
 
 - 在线访问: <https://longwaybai.github.io>

@@ -1,5 +1,7 @@
 # DocBit
 
+English | [简体中文](./README.md)
+
 DocBit is a personal technical notes site built with Docusaurus. It is where I organize tool configuration notes, terminal workflows, troubleshooting write-ups, and ongoing technical observations from day-to-day development work.
 
 - Live site: <https://longwaybai.github.io>
